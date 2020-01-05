@@ -11,10 +11,16 @@
 - 将地图连接在了首页
 
 ## python
-导入数据、进行数据清洗
+- 导入数据、进行数据清洗
+- 与html连接
+- 进行了数据交互
 
 ## 数据进行了交互
+- 含有复杂的数据结构循环
+- 运用了条件判断
+- 运用了推导式
 
 ## python与html交互
 
+## Pythonanywhere 
 [pythonanywhere](http://liuziqi.pythonanywhere.com/)
