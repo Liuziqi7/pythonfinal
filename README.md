@@ -9,6 +9,7 @@
 - 首页文件
 - 用了切片
 - 将地图连接在了首页
+- 符合jinja2标准
 
 ## python
 - 导入数据、进行数据清洗
@@ -17,6 +18,7 @@
 
 ## 数据进行了交互
 - 含有复杂的数据结构循环
+- 含有数据结构嵌套
 - 运用了条件判断
 - 运用了推导式
 
@@ -24,3 +26,7 @@
 
 ## Pythonanywhere 
 [pythonanywhere](http://liuziqi.pythonanywhere.com/)
+## url：
+首页：http://liuziqi.pythonanywhere.com/
+2009-2017各省产生垃圾与人口对比：http://liuziqi.pythonanywhere.com/gzsr?
+城乡收入支付对比：http://liuziqi.pythonanywhere.com/bar?
