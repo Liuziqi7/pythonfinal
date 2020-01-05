@@ -27,6 +27,6 @@
 ## Pythonanywhere 
 [pythonanywhere](http://liuziqi.pythonanywhere.com/)
 ## url：
-首页：http://liuziqi.pythonanywhere.com/
-2009-2017各省产生垃圾与人口对比：http://liuziqi.pythonanywhere.com/gzsr?
-城乡收入支付对比：http://liuziqi.pythonanywhere.com/bar?
+- 首页：http://liuziqi.pythonanywhere.com/
+- 2009-2017各省产生垃圾与人口对比：http://liuziqi.pythonanywhere.com/gzsr?
+- 城乡收入支付对比：http://liuziqi.pythonanywhere.com/bar?
