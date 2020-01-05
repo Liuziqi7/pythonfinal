@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Proudly presented by ECharts</title>
+    {% for jsfile_name in script_list %}
+        <script src="../static/{{ jsfile_name }}.js"></script>
+    {% endfor %}
+</head>
+
+<body>
+<div style="margin: auto;width: 70%">
+    <div>
+        <h3>全国薪资水平</h3>
+    </div>
+    <form action="/" style="margin-left: 10px">
+        <button type="submit">首页</button>
+    </form>
+
+    <form action="/gzsr" style="margin-left: 10px;margin-top: 5px">
+        <button type="submit">2009-2017年各省产生垃圾与人口对比</button>
+    </form>
+    <form action="/bar" style="margin-left: 10px;margin-top: 5px">
+        <button type="submit">城乡收入支付对比</button>
+    </form>
+    <form action="/data" style="margin-left: 10px;margin-top: 5px">
+        <button type="submit">数据</button>
+    </form>
+    <div style="clear: both"></div>
+</div>
+<div style="margin: auto;width: 70%">
+    {{ myechart|safe }}
+    <div style="size: 50px"><b>{% if text %}
+        选择数据的目的
+    {% endif %}</b></div>
+    <div style="float: left;width: 70%">
+        <p style="text-indent:2em">{{ text }}</p>
+    </div>
+    <div style="size: 50px;clear: both"><b>{% if text1 %}
+        发现的故事
+    {% endif %}</b></div>
+    <div style="float: left;width: 70%">
+        <p style="text-indent:2em">{{ text1 }}</p>
+    </div>
+    {% if a %}
+        <table border="1">
+            <tr>
+                <td colspan="11" style="text-align: center"> 全国平均工资</td>
+            </tr>
+            <tr>
+                <td></td>
+                {% for i in data_x %}
+                    <td style="width: 50px;text-align: center">{{ i }}</td>
+                {% endfor %}
+            </tr>
+            {% for foo in result %}
+                <tr>
+                    {% for i in foo %}
+                        <td style="width: 50px;text-align: center">{{ i }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+
+
+        </table>
+    {% endif %}
+    <div style="clear: both"></div>
+    <table border="1">
+        <tr>
+            <td>年份</td>
+            <td>城镇居民平均收入(平均值)</td>
+            <td>城镇居民人均可支配收入</td>
+            <td>城镇居民人均消费支出</td>
+        </tr>
+        <tr>
+            <td>2013年</td>
+            <td>49137.87</td>
+            <td>26467</td>
+            <td>18488</td>
+        </tr>
+        <tr>
+            <td>2014年</td>
+            <td>53555.03</td>
+            <td>28844</td>
+            <td>19968</td>
+        </tr>
+        <tr>
+            <td>2015年</td>
+            <td>59897.62</td>
+            <td>31195</td>
+            <td>21392</td>
+        </tr>
+        <tr>
+            <td>2016年</td>
+            <td>64983.56</td>
+            <td>33616</td>
+            <td>23079</td>
+        </tr>
+        <tr>
+            <td>2017年</td>
+            <td>71122.81</td>
+            <td>36396</td>
+            <td>24445</td>
+        </tr>
+        <tr>
+            <td>2018年</td>
+            <td>78415.46</td>
+            <td>39251</td>
+            <td>26112</td>
+        </tr>
+    </table>
+    <div style="size: 50px;clear: both"><b>
+        从得到的数据表格上进行分析
+    </b></div>
+    <div style="float: left;width: 70%">
+        <p style="text-indent:2em">单从表1的数字上可以发现，不论是年收入还是可支配收入还是实际消费支出，都是在增加的，这代表我国平均流动资金是有所增长的。</p>
+    </div>
+<div style="clear: both"></div>
+    <table border="1">
+        <tr>
+            <td>年份</td>
+            <td>城镇居民人均可支配收入占城镇居民平均收入(平均值)的比例</td>
+            <td>城镇居民人均消费支出占城镇居民平均收入(平均值)的比例</td>
+        </tr>
+        <tr>
+            <td>
+                2013年
+            </td>
+            <td> 53.86%</td>
+            <td>37.62%</td>
+        </tr>
+        <tr>
+            <td>2014年
+            </td>
+            <td>53.85%</td>
+            <td>37.28%</td>
+        </tr>
+        <tr>
+            <td>2015年
+            </td>
+            <td>52.08%</td>
+            <td>35.71%</td>
+        </tr>
+        <tr>
+            <td>2016年
+            </td>
+            <td>51.73%</td>
+            <td>35.51%</td>
+        </tr>
+        <tr>
+            <td>2017年
+            </td>
+            <td>51.17%</td>
+            <td>34.37%</td>
+        </tr>
+        <tr>
+            <td>2018年</td>
+            <td>50.05%</td>
+            <td> 33.29%</td>
+        </tr>
+    </table>
+    <div style="size: 50px;clear: both"><b>
+        从得到的数据表格上进行分析
+    </b></div>
+    <div style="float: left;width: 70%">
+        <p style="text-indent:2em">从表2却得到了不同的答案。虽然人们的收入和消费的数字都在提升，但人们的消费水平真的有变好吗？
+            从比例上来看不论是可支配收入还是实际消费支出，比例都是有一定程度的下降的，这就表示了虽然在年均收入上得到了提升，但并没有改变人们的消费水平，甚至是有所下降。很明显，收入的高低并非人们生活水平的考量标准。</p>
+    </div>
+    <div style="size: 50px;clear: both"><b>
+        原因分析
+    </b></div>
+    <div style="float: left;width: 70%">
+        <p style="text-indent:2em">
+            如今我国也开始进入老龄化时期，工作人口开始减少，同时由于“狼多肉少”的原因，人口很多，但是住房问题、工作问题却没有真正得到解决，反而是更加令人头疼的出现了，人们的可支配收入难以提升。
+            现在的社会贫富差距越发的增大，物价、房价不停的飞涨，而工资的涨幅却远远无法弥补这样巨大的漏洞，人们的消费比例也应景的降低。</p>
+    </div>
+    <div style="size: 50px;clear: both"><b>
+        分析
+    </b></div>
+    <div style="float: left;width: 70%">
+        <p style="text-indent:2em">
+            居民收入差距的扩大，原因是复杂的，既有分配制度改革、资源拥有、市场机遇、个人素质和社会贡献不同等正常、合理的原因，也有一些是通过掠夺性、腐败性、欺诈性、垄断性等不合理甚至非法收入形成的因素。
+            但很明显的是缩小收入差距是一个长期的过程，并不能在短期内实现，更不能通过降低高收入者的收入水平来实现。
+            当前缩小收入差距的关键是提高低收入者的收入水平。这是社会主义共同富裕和全面建设小康社会的本质要求，也是扩大国内市场、保持国民经济持续快速增长、统筹社会与经济发展、维护社会稳定的需要。为此，必须采取积极措施，治标与治本相结合，大力提高低收入者的收入水平。
+            也许可行的方式¶
+            在我看来有以下几点建议也许能慢慢改变现状 1.增加就业岗位，缓解失业压力。 2.改善低收入家庭的住房条件，提高住房标准。
+            就业机会、住房问题，在我看来是最明显的问题，当这两者有了合理的解释时，生活水平也许能够得到相对的提升。</p>
+    </div>
+</div>
+
+</body>
+
+</html>
